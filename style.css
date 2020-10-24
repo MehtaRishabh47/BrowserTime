@@ -1,0 +1,174 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    margin:0;
+    
+}
+.container{
+    padding: 10px;
+    position :relative;
+    height:420px;
+    margin:0 480px;
+}
+
+/* -------------sec-1----------------------- */
+.sec-1{
+    height: 90px;
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    align-items: center;
+    background-color: #F8F8F8;
+}
+.sec-1_box{
+    width:20%;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.box_1{
+    display: block;
+    text-align: center;
+}
+.box_1 img{
+    width: 35px;
+}
+.box_1 h4{
+    font-size: 15px;
+    font-weight:600;
+    margin:5px 0;
+    color:#9D9D9D;
+    cursor: pointer;
+}
+    .box_1 h4:hover{
+    color:#457AE9;
+}
+/* --------------sec-2--------------------------- */
+.sec-2{
+    display: flex;
+    flex-flow: row;
+    /* overflow: scroll; */
+    
+}
+.sec-2a{
+    width: 100%;
+    display: flex;
+    flex-flow: row;   
+}
+.fixed_header{
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+}
+.fixed_header tbody{
+    display:block;
+    width: 100%;
+    overflow: auto;
+    height: 250px;
+  }
+  .fixed_header thead tr {
+    display: block;
+ }
+ .fixed_header thead {
+
+    color:#fff;
+  }
+  
+  .fixed_header th, .fixed_header td {
+    padding: 5px;
+    text-align: left;
+    width: 200px;
+  }
+  .img{
+      width:85px!important;
+  }
+th{
+    color:#9D9D9D;
+
+}
+td img{
+    padding: 0;
+    width: 20px;
+}
+td{
+    text-align: center;
+    padding:10px 0;
+    font-weight: 600;
+}
+.grey{
+    color: #9D9D9D;
+}
+
+/* --------------------sec-3---------------------- */
+.sec-3{
+    width: 90%;
+    height:50px;
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    align-content: center;
+    position: absolute;
+    border-top: 1px solid #444;
+    /* position :fixed; */
+    bottom :0;
+    background-color: #F8F8F8;
+}
+
+.calendar{
+    width:200px;
+    display: flex;
+    align-content: center;
+    /* justify-content: center; */
+}
+.day-week{
+    /* width: 250px; */
+    display: flex;
+    flex-flow: row;
+    align-content: center;
+    justify-content: center;
+}
+.day-week a{
+    color: #000!important;
+    padding:15px 20px 0 0;
+    text-decoration: none!important;
+}
+.day-week a:hover{
+    color:#457AE9!important;
+}
+.calendar span{
+    padding: 15px 0;
+    cursor: pointer;
+}
+button{
+    outline: none;
+    background-color: #fff;
+    border: none;
+    cursor: pointer;
+}
+button img{
+    width:10px;
+}
+/* ------------Scroll-bar----------------------- */
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888; 
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+  }

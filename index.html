@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> -->
+    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> -->
+    <title>BrowserTime</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="sec-1">
+            <div class="sec-1_box">
+                <div class="hover">
+                    <div class="box_1">
+                        <img src="./imgs/clock.png" alt="clock">
+                    </div>
+                    <div class="box_1">
+                        <h4>
+                            Today
+                        </h4>
+                    </div>
+                </div>
+            </div>
+            <div class="sec-1_box">
+                <div class="box_1">
+                    <div class="box_1a">
+                        <img src="./imgs/opened-frontal-drawer.png" alt="">
+                    </div>
+                    <div class="box_1">
+                        <h4>
+                            Websites
+                        </h4>
+                    </div>
+                </div>
+            </div>
+            <div class="sec-1_box">
+                <div class="box_1">
+                    <img src="./imgs/bar-chart.png" alt="">
+                </div>
+                <div class="box_1">
+                    <h4>
+                        Stats
+                    </h4>
+                </div>
+            </div>
+        </div>
+
+        <!-- -------------------------sec-2-------------------------- -->
+        <div class="sec-2">
+            <div class="sec-2a">
+                <table class="fixed_header">
+                    <thead>
+                        <tr>
+                            <th class="img"></th>
+                            <th>Count</th>
+                            <th>Time</th>
+                            <th>Quota</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="img"><img src="./imgs/youtube.png"></td>
+                            <td>126x</td>
+                            <td>54m</td>
+                            <td class="grey">Set</td>
+                        </tr>
+                        <tr>
+                            <td class="img"><img src="./imgs/twitter (2).png"></td>
+                            <td>10x</td>
+                            <td>10m</td>
+                            <td class="grey">Set</td>
+                        </tr>
+                        <tr>
+                            <td class="img"><img src="./imgs/gmail.png"></td>
+                            <td>20x</td>
+                            <td>20m</td>
+                            <td class="grey">Set</td>
+                        </tr>
+                        <tr>
+                            <td class="img"><img src="./imgs/gmail.png"></td>
+                            <td>20x</td>
+                            <td>20m</td>
+                            <td class="grey">Set</td>
+                        </tr>
+                        <tr>
+                            <td class="img"><img src="./imgs/gmail.png"></td>
+                            <td>20x</td>
+                            <td>20m</td>
+                            <td class="grey">Set</td>
+                        </tr>
+                        <tr>
+                            <td class="img"><img src="./imgs/gmail.png"></td>
+                            <td>20x</td>
+                            <td>20m</td>
+                            <td class="grey">Set</td>
+                        </tr>
+                        <tr>
+                            <td class="img"><img src="./imgs/gmail.png"></td>
+                            <td>20x</td>
+                            <td>20m</td>
+                            <td class="grey">Set</td>
+                        </tr>
+                        <tr>
+                            <td class="img"><img src="./imgs/gmail.png"></td>
+                            <td>20x</td>
+                            <td>20m</td>
+                            <td class="grey">Set</td>
+                        </tr>
+                        <tr>
+                            <td class="img"> <img src="./imgs/gmail.png"></td>
+                            <td>20x</td>
+                            <td>20m</td>
+                            <td class="grey">Set</td>
+                        </tr>
+                        <tr>
+                            <td class="img"><img src="./imgs/gmail.png"></td>
+                            <td>20x</td>
+                            <td>20m</td>
+                            <td class="grey">Set</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+        <!-- -------------------------sec-3-------------------------- -->
+        <div class="sec-3">
+            <div class="calendar">
+
+                <button onclick="back(); "><img src="./imgs/left-arrow.png"></button>
+                <input onchange="dateChanged()" type="text" id="datepicker" style="display:none;">
+                <span id="dateText" onclick="show_dp()"></span>
+                <button onclick="forward()"><img src="./imgs/right-arrow.png"></button>
+
+
+            </div>
+            <div class="day-week">
+                <a href="#">Daily</a>
+                <a href="#">Weekly</a>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<script>
+
+    function set_date(d) {
+        var dateText = document.getElementById('dateText');
+
+        var week = ['Sun', 'Mon', 'Tue', 'Wed', 'Thurs', 'Fri', 'Sat'];
+        var month = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+
+        dateText.innerText = week[d.getDay()] + ',' + month[d.getMonth()] + ' ' + d.getDate() + ' ' + d.getFullYear();
+
+    }
+
+    var d = new Date();
+
+    $(function () {
+        $("#datepicker").datepicker();
+    });
+    function show_dp() {
+        $("#datepicker").datepicker('show'); //Show on click of button
+    }
+
+    function dateChanged() {
+        var datepicker = document.getElementById('datepicker');
+        var month = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+        var dateValue = datepicker.value;
+
+        var dateArray = dateValue.split('/');
+
+        var dateFinal = month[dateArray[0]] + ' ' + dateArray[1] + ', ' + dateArray[2];
+
+        var dateFinal2 = dateArray[2] + '-' + dateArray[0] + '-' + dateArray[1];
+
+        d = new Date(dateFinal2)
+        set_date(d)
+    }
+
+
+
+    set_date(d);
+
+    function back() {
+        d.setDate(d.getDate() - 1);
+        set_date(d);
+    }
+
+    function forward() {
+        d.setDate(d.getDate() + 1);
+        set_date(d);
+    }
+
+
+
+</script>
+
+</html>
